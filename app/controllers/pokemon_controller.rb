@@ -13,12 +13,12 @@ class PokemonController < ApplicationController
         json_response(@pokemon, :created)
     end
 
-    # GET /pokemon/:id
+    # GET /pokemon/:pokemonNb
     def show
         json_response(@pokemon)
     end
 
-    # PUT /pokemon/:id
+    # PUT /pokemon/:pokemonNb
     def update
         @pokemon.update(pokemon_params)
         head :no_content
