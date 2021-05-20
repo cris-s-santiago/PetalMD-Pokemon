@@ -9,7 +9,7 @@ require 'csv'
 
 # Data transfer from csv file to sqlite3
 CSV.foreach(Rails.root.join('db', 'pokemon.csv'), headers: true) do |row|
-    PokemonList.create!(
+    Pokemon.create!(
       pokemonNb: row['#'],
       name: row['Name'], 
       type1: row['Type 1'],
@@ -22,5 +22,6 @@ CSV.foreach(Rails.root.join('db', 'pokemon.csv'), headers: true) do |row|
       spDef: row['Sp. Def'], 
       speed: row['Speed'],
       generation: row['Generation'],
-      legendary: row['Legendary'])
+      legendary: row['Legendary']
+    )
 end

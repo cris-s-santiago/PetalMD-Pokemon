@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_20_003434) do
+ActiveRecord::Schema.define(version: 2021_05_20_024244) do
 
-  create_table "pokemon_lists", force: :cascade do |t|
+  create_table "pokemons", force: :cascade do |t|
     t.integer "pokemonNb"
     t.string "name"
     t.string "type1"
