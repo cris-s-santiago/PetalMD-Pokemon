@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Pokemon, type: :model do
-  # Validation tests
-  # ensure columns title and created_by are present before saving
+  # ensure columns are present before saving
   it { should validate_presence_of(:pokemonNb) }
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:type1) }
