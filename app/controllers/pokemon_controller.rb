@@ -1,10 +1,17 @@
 class PokemonController < ApplicationController
     before_action :set_pokemon, only: [:show, :update, :destroy]
 
-    # GET /pokemon
-    def index
+    # GET /pokemonall
+    def pokemonAll
         @pokemons = Pokemon.all
         json_response(@pokemons)
+    end
+
+    # GET /pokemon
+    def index
+       # get paginated current user todos
+       @pokemons = Pokemon.paginate(page: params[:page], per_page: 20)
+       json_response(@pokemons)
     end
 
     # POST /pokemon

@@ -2,18 +2,18 @@ require 'rails_helper'
 
 RSpec.describe "Pokemons", type: :request do
   # initialize test data
-  let!(:pokemon) { create_list(:pokemon, 10) }
+  let!(:pokemon) { create_list(:pokemon, 30) }
   let!(:id) { pokemon.first.id }
 
-  # Test suite for GET /pokemon
-  describe 'GET /pokemon' do
+  # Test suite for GET /pokemonall
+  describe 'GET /pokemonall' do
     # make HTTP get request before each example
-    before { get '/pokemon' }
+    before { get '/pokemonall' }
 
-    it 'returns pokemon' do
+    it 'returns all pokemons' do
       # Note `json` is a custom helper to parse JSON responses
       expect(json).not_to be_empty
-      expect(json.size).to eq(10)
+      expect(json.size).to eq(30)
     end
 
     it 'returns status code 200' do
@@ -21,7 +21,23 @@ RSpec.describe "Pokemons", type: :request do
     end
   end
 
-  # Test suite for GET /pokemon/:pokemonNb
+  # Test suite for GET /pokemon
+  describe 'GET /pokemon' do
+    # make HTTP get request before each example
+    before { get '/pokemon' }
+
+    it 'returns only the amount per page' do
+      # Note `json` is a custom helper to parse JSON responses
+      expect(json).not_to be_empty
+      expect(json.size).to eq(20)
+    end
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  # Test suite for GET /pokemon/:id
   describe 'GET /pokemon/:id' do
     before { get "/pokemon/#{id}" }
 
