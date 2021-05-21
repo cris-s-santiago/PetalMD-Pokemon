@@ -45,6 +45,26 @@ From a list of Pokémon, the API allows you to perform CRUD actions (Create, Rea
    rails s
 ```
 
+---
+
+
 ## Preview:
 ### Postman:
 ![](images/test_postman.gif)
+
+---
+
+
+## Additional:
+
+📈 Deployment of the Restful API on the Heroku cloud, with Postgres as a database on the AWS cloud.
+
+```ssh
+    https://test-pokemon-list.herokuapp.com
+```
+
+📈 Workspace created at Postman for testing.
+
+```ssh
+    https://app.getpostman.com/join-team?invite_code=1b3c3ed65a7224a0c2b02f8829473e99&ws=50e05228-48d8-44c5-bbec-723dad2e5076
+```
